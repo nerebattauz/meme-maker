@@ -1,0 +1,220 @@
+
+body{
+    width: 100%;
+    background-color: grey;
+    font-family: "Inter Tight", sans-serif;
+}
+
+/* nav */
+
+nav{
+    padding: 24px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darker-gray);
+    color: white;
+    list-style: none;
+    border-bottom: 1px solid var(--purple);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#nav-buttons {
+    display: flex;
+    gap: 0px 16px;
+}
+
+.nav-button {
+    border: none;
+    background-color: var(--darker-gray);
+    color: white;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: var(--gray);
+}
+
+.fa-solid {
+    padding-right: 8px;
+}
+
+
+/* main */
+#main {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#contenedor-txt-img{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 480px;
+    background-color: black;
+    padding: auto;
+    color: black;
+}
+
+#cont-img-meme{
+    background-image: url(./assets/perro.jpg);
+    height: 300px;
+}
+
+#txt-sup {
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: 24px 24px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#txt-inf {
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: 24px 24px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#descargar-meme{
+    margin-top: 40px;
+    background-color: var(--purple);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: large;
+    cursor: pointer;
+}
+
+
+/* aside imagen pt1 */
+
+#aside-img {
+    z-index: 1;
+    width: 100%;
+    background-color: var(--medium-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    gap: 12px;
+}
+
+.parametros-img{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 24px;
+
+}
+
+#pic-dos-parametros{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: end;
+}
+
+#pic-txt-bg{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#color-picker {
+    width: 100%;
+}
+
+#url-input{
+    height: 32px;
+    background-color: var(--gray);
+    border: none;
+}
+
+#cont-url{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+ }
+
+#pic-modo-fusion {
+    width: 100%;
+    border: none;
+    height: 32px;
+    background-color: var(--gray);
+    padding: 0 8px;
+}
+
+
+/* aside imagen pt2 */
+
+.rango{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.conj-rangos{
+    padding-top: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.label-filtros{
+    padding-top: 8px;
+}
+
+.slider{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2px;
+    background: var(--gray);
+    outline: none;
+    margin: 7px 0;
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    height: 10px; /* Slider handle height */
+    background: var(--purple); /* Green background */
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+#reestablecer-filtros{
+    margin-top: 32px;
+    background-color: var(--purple);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: medium;
+    cursor: pointer;
+    width: 100%;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Meme Maker</title>
+</head>
+<body>
+
+    <!-- NAV -->
+
+    <nav>
+        <h1>Meme Maker</h1>
+        <div id="nav-buttons">
+            <button class="nav-button" id="nav-img"><i class="fa-solid fa-image"></i>Imagen</button>
+            <button class="nav-button" id="nav-txt"><i class="fa-solid fa-font"></i>Texto</button>
+            <button class="nav-button" id="dark-mode"><i class="fa-solid fa-image"></i>Modo Claro</button>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+
+    <main id="main">
+        <div id="contenedor-txt-img">
+            <div id="txt-sup">TOP TEXT</div>
+            <div id="cont-img-meme"></div>
+            <div id="txt-inf">BOTTOM TEXT</div>
+        </div>
+        <button id="descargar-meme">Descargar Meme</button>
+    </main>
+
+
+    <!-- ASIDE -->
+    <aside id="aside-img">
+        <h3 class="name-section-aside">IMAGEN</h3>
+        <div class="parametros-img">
+            <div id="cont-url"><label for="">URL</label><input id="url-input" type="url"></div>
+            <div id="pic-dos-parametros">
+                <div id="pic-txt-bg"><label for="">FONDO</label><input id="color-picker" type="color" value="#ffffff"></div>
+                <select id="pic-modo-fusion">
+                    <option value="" id="Ninguno">Ninguno</option>
+                    <option value="" id="Aclarar">Aclarar</option>
+                    <option value="" id="Oscurecer">Oscurecer</option>
+                    <option value="" id="Diferencia">Diferencia</option>
+                    <option value="" id="Luminosidad">Luminosidad</option>
+                    <option value="" id="Multiplicar">Multiplicar</option>
+                </select>
+            </div>
+            <div>
+                <label>FILTROS</label>
+                <div class="conj-rangos">
+                  <div class="rango">
+                    <label class="label-filtros">BRILLO</label>
+                    <input type="range" min="1" max="200" value="100" class="slider" id="brillo"/>
+                  </div>
+                  <div class="rango">
+                    <label class="label-filtros">OPACIDAD</label>
+                    <input type="range" min="1" max="100" value="100" class="slider" id="opacidad"/>
+                  </div>
+                  <div class="rango">
+                    <label class="label-filtros">CONTRASTE</label>
+                    <input type="range" min="1" max="200" value="100" class="slider" id="contraste"/>
+                  </div>
+                  <div class="rango">
+                    <label class="label-filtros">DESENFOQUE</label>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="desenfoque"/>
+                  </div>
+                  <div class="rango">
+                    <label class="label-filtros">ESCALA DE GRISES</label>
+                    <input type="range" min="1" max="100" value="0" class="slider" id="grices"/>
+                  </div>
+                  <div class="rango">
+                    <label class="label-filtros">SEPIA</label>
+                    <input type="range" min="1" max="100" value="1" class="slider" id="sepia"/>
+                  </div>
+                  <div class="rango">
+                    <label class="label-filtros">TONALIDAD</label>
+                    <input type="range" min="0" max="360" value="0" class="slider" id="tonalidad"/>
+                  </div>
+                  <div class="rango">
+                      <label class="label-filtros">SATURACIÓN</label>
+                      <input type="range" min="1" max="200" value="100" class="slider" id="saturacion"/>
+                    </div>
+                    <div class="rango">
+                      <label class="label-filtros">NEGATIVO</label>
+                      <input type="range" min="0" max="100" value="0" class="slider" id="negativo"/>
+                    </div>
+                </div>
+                <button id="reestablecer-filtros">Reestablecer filtros</button>
+        </div>
+    </aside>
+
+
+    <script src="https://kit.fontawesome.com/aa9529ca56.js" crossorigin="anonymous"></script>
+</body>
+</html>

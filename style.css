@@ -1,0 +1,36 @@
+@import url(normalize.css);
+@import url(mobile.css);
+@import url(tablet.css) screen and (min-width: 767px) and (max-width: 1023px);
+@import url(desktop.css) screen and (min-width: 1024px);
+
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900');
+
+:root{
+    --black: #090b10;
+    --darker-gray: #191e2b;
+    --medium-gray: #252935;
+    --lighter-gray: #30343f;
+    --gray:#4e525c;
+    --purple: #7840a3;
+    --medium-purple:#9b6ebd;
+    --light-purple: #d297ff;  
+    --white: #f9faff;
+
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #f4f7ff;
+    font-family: 'Inter Tight';
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: var(--lighter-gray);
+}
