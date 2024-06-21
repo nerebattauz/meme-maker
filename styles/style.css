@@ -1,7 +1,7 @@
 @import url(normalize.css);
-@import url(mobile.css);
-@import url(tablet.css) screen and (min-width: 767px) and (max-width: 1023px);
-@import url(desktop.css) screen and (min-width: 1024px);
+@import url(/styles/mobile.css);
+@import url(/styles/tablet.css) screen and (min-width: 767px) and (max-width: 1023px);
+@import url(/styles/desktop.css) screen and (min-width: 1024px);
 
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900');
 

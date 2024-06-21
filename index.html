@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Meme Maker</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
         <div id="nav-buttons">
             <button class="nav-button" id="nav-img"><i class="fa-solid fa-image"></i>Imagen</button>
             <button class="nav-button" id="nav-txt"><i class="fa-solid fa-font"></i>Texto</button>
-            <button class="nav-button" id="dark-mode"><i class="fa-solid fa-image"></i>Modo Claro</button>
+            <button class="nav-button" id="dark-mode"><i class="fa-solid fa-lightbulb"></i>Modo Claro</button>
         </div>
     </nav>
 
@@ -31,14 +31,14 @@
     </main>
 
 
-    <!-- ASIDE -->
-    <aside id="aside-img">
+    <!-- ASIDE IMG -->
+    <aside class="aside" id="aside-img">
         <h3 class="name-section-aside">IMAGEN</h3>
-        <div class="parametros-img">
-            <div id="cont-url"><label for="">URL</label><input id="url-input" type="url"></div>
+        <div class="parametros-asides">
+            <div id="cont-url"><label for="">URL</label><input class="txt-num-input" id="url-input" type="url"></div>
             <div id="pic-dos-parametros">
-                <div id="pic-txt-bg"><label for="">FONDO</label><input id="color-picker" type="color" value="#ffffff"></div>
-                <select id="pic-modo-fusion">
+                <div id="pic-txt-bg"><label for="">FONDO</label><input class="color-picker" id="color-picker" type="color" value="#ffffff"></div>
+                <select class="txt-num-input" id="pic-modo-fusion">
                     <option value="" id="Ninguno">Ninguno</option>
                     <option value="" id="Aclarar">Aclarar</option>
                     <option value="" id="Oscurecer">Oscurecer</option>
@@ -52,46 +52,119 @@
                 <div class="conj-rangos">
                   <div class="rango">
                     <label class="label-filtros">BRILLO</label>
-                    <input type="range" min="1" max="200" value="100" class="slider" id="brillo"/>
+                    <input type="range" min="0" max="2" value="1" step="0.05" class="slider" id="brillo"/>
                   </div>
                   <div class="rango">
                     <label class="label-filtros">OPACIDAD</label>
-                    <input type="range" min="1" max="100" value="100" class="slider" id="opacidad"/>
+                    <input type="range" min="0" max="1" value="1" step="0.05" class="slider" id="opacidad"/>
                   </div>
                   <div class="rango">
                     <label class="label-filtros">CONTRASTE</label>
-                    <input type="range" min="1" max="200" value="100" class="slider" id="contraste"/>
+                    <input type="range" min="1" max="10" value="1" step="0.05" class="slider" id="contraste"/>
                   </div>
                   <div class="rango">
                     <label class="label-filtros">DESENFOQUE</label>
-                    <input type="range" min="0" max="10" value="0" class="slider" id="desenfoque"/>
+                    <input type="range" min="0" max="5" value="0" step="0.05" class="slider" id="desenfoque"/>
                   </div>
                   <div class="rango">
                     <label class="label-filtros">ESCALA DE GRISES</label>
-                    <input type="range" min="1" max="100" value="0" class="slider" id="grices"/>
+                    <input type="range" min="0" max="1" value="0" step="0.05" class="slider" id="grices"/>
                   </div>
                   <div class="rango">
                     <label class="label-filtros">SEPIA</label>
-                    <input type="range" min="1" max="100" value="1" class="slider" id="sepia"/>
+                    <input type="range" min="0" max="1" value="0" step="0.05" class="slider" id="sepia"/>
                   </div>
                   <div class="rango">
                     <label class="label-filtros">TONALIDAD</label>
-                    <input type="range" min="0" max="360" value="0" class="slider" id="tonalidad"/>
+                    <input type="range" min="1" max="360" value="1" step="1" class="slider" id="tonalidad"/>
                   </div>
                   <div class="rango">
                       <label class="label-filtros">SATURACIÓN</label>
-                      <input type="range" min="1" max="200" value="100" class="slider" id="saturacion"/>
+                      <input type="range" min="0" max="2" value="1" step="0.05" class="slider" id="saturacion"/>
                     </div>
                     <div class="rango">
                       <label class="label-filtros">NEGATIVO</label>
-                      <input type="range" min="0" max="100" value="0" class="slider" id="negativo"/>
+                      <input type="range" min="0" max="1" value="0" step="0.05" class="slider" id="negativo"/>
                     </div>
                 </div>
                 <button id="reestablecer-filtros">Reestablecer filtros</button>
         </div>
     </aside>
 
+    <!-- ASIDE TXT -->
+
+    <aside class="aside" id="aside-txt">
+        <h3 class="name-section-aside">TEXTO</h3>
+       
+        <div class="parametros-asides">
+            <div class="aside-input-text" id="cont-top-text">
+                <label class="label-filtros" for="">SUPERIOR</label>
+                <input class="txt-num-input" id="input-top-text" type="text">
+                <div><input class="checkbox" id="checkbox-txt-sup" type="checkbox">Sin texto superior</div>
+            </div>
+            <div class="aside-input-text" id="cont-bottom-text">
+              <label class="label-filtros" for="">INFERIOR</label>
+              <input class="txt-num-input" id="input-bottom-text" type="text">
+              <div><input class="checkbox" id="checkbox-txt-inf" type="checkbox">Sin texto inferior</div>
+            </div>
+            
+            <div class="div-fuente">
+              <label class="label-filtros" for="">FUENTE</label>
+              <select class="txt-num-input" name="" id="font-type">
+                <option value="Arial">Arial</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="American Typewriter">American Typewriter</option>
+                <option value="Comic Sans">Comic Sans</option>
+                <option value="Impact">Impact</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Times New Roman">Times New Roman</option>
+              </select>
+              <input class="txt-num-input" id="font-size" type="number" value="24">
+              <div>
+                <button class="button"><i class="fa-solid fa-align-left"></i></button>
+                <button class="button"><i class="fa-solid fa-align-center"></i></button>
+                <button class="button"><i class="fa-solid fa-align-right"></i></button>
+              </div>
+             </div> 
+
+              <div class="div-color">
+                <div class="cont-colorpicker">
+                  <div><label class="label-filtros" for="">COLOR</label><input class="color-picker" id="color-picker-color" type="color" value="#000000"></div>
+                  <div><label class="label-filtros" for="">FONDO</label><input class="color-picker" id="color-picker-fondo" type="color" value="#ffffff"></div>
+                </div>
+                  <div><input id="checkbox-transparent" class="checkbox" type="checkbox">Fondo Transparente</div>
+              </div>
+              
+              <div id="div-contorno">
+                <label class="label-filtros" for="">CONTORNO</label>
+                <div id="botones-contorno">
+                <button class="button">Ninguno</button>
+                <button class="button">Claro</button>
+                <button class="button">Oscuro</button>
+                </div>
+              </div>
+
+              <div id="div-espaciado">
+                <label class="label-filtros" for="">ESPACIADO</label>
+                <input class="txt-num-input" type="number" name="" id="">
+              </div>
+
+              <div id="div-interlineado">
+                <label class="label-filtros" for="">INTERLINEADO</label>
+                <select class="txt-num-input" name="" id="interlineado">
+                  <option value="0.8">0.8</option>
+                  <option value="1">1</option>
+                  <option value="1.2">1.2</option>
+                  <option value="1.5">1.5</option>
+                  <option value="2">2</option>
+                  <option value="2.5">2.5</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
     <script src="https://kit.fontawesome.com/aa9529ca56.js" crossorigin="anonymous"></script>
+    <script src="scripts/script-image.js"></script>
+    <script src="scripts/script-text.js"></script>
 </body>
 </html>

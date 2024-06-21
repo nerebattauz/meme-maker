@@ -25,6 +25,10 @@ h1 {
     font-weight: 600;
 }
 
+label {
+    font-weight: 600;
+}
+
 #nav-buttons {
     display: flex;
     gap: 0px 16px;
@@ -44,9 +48,12 @@ h1 {
     background-color: var(--gray);
 }
 
-.fa-solid {
+.nav-button {
+    .fa-solid{
     padding-right: 8px;
 }
+}
+
 
 
 /* main */
@@ -71,17 +78,19 @@ h1 {
 }
 
 #cont-img-meme{
-    background-image: url(./assets/perro.jpg);
-    height: 300px;
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 #txt-sup {
     width: 100%;
     background-color: white;
     color: black;
-    padding: 24px 24px;
+    padding: 16px;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
@@ -89,9 +98,9 @@ h1 {
     width: 100%;
     background-color: white;
     color: black;
-    padding: 24px 24px;
+    padding: 16px;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
@@ -107,9 +116,19 @@ h1 {
 }
 
 
+/* aside z-index */
+
+#aside-img{
+    z-index: 2;
+}
+
+#aside-txt{
+    z-index: 1;
+}
+
 /* aside imagen pt1 */
 
-#aside-img {
+.aside {
     z-index: 1;
     width: 100%;
     background-color: var(--medium-gray);
@@ -121,7 +140,7 @@ h1 {
     gap: 12px;
 }
 
-.parametros-img{
+.parametros-asides{
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -144,11 +163,12 @@ h1 {
     gap: 8px;
 }
 
-#color-picker {
+.color-picker {
     width: 100%;
+    background-color: var(--gray);
 }
 
-#url-input{
+.txt-num-input{
     height: 32px;
     background-color: var(--gray);
     border: none;
@@ -217,4 +237,73 @@ h1 {
     font-size: medium;
     cursor: pointer;
     width: 100%;
+}
+
+/* aside texto */
+
+.aside-input-text{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.div-fuente{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.font-size{
+    width: 100%;
+}
+
+.button {
+    border: none;
+    background-color: var(--darker-gray);
+    color: white;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: var(--gray);
+}
+
+.checkbox{
+    margin-right: 8px;
+}
+
+.div-color{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    line-gap-override: 16px;
+    .color-picker{
+        margin-top: 4px;
+    }
+}
+
+.cont-colorpicker{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+#botones-contorno{
+ margin-top: 8px;
+}
+
+#div-espaciado{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#div-interlineado{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
