@@ -39,12 +39,12 @@
             <div id="pic-dos-parametros">
                 <div id="pic-txt-bg"><label for="">FONDO</label><input class="color-picker" id="color-picker" type="color" value="#ffffff"></div>
                 <select class="txt-num-input" id="pic-modo-fusion">
-                    <option value="" id="Ninguno">Ninguno</option>
-                    <option value="" id="Aclarar">Aclarar</option>
-                    <option value="" id="Oscurecer">Oscurecer</option>
-                    <option value="" id="Diferencia">Diferencia</option>
-                    <option value="" id="Luminosidad">Luminosidad</option>
-                    <option value="" id="Multiplicar">Multiplicar</option>
+                    <option value="" id="ninguno">Ninguno</option>
+                    <option value="lighten" id="aclarar">Aclarar</option>
+                    <option value="darken" id="oscurecer">Oscurecer</option>
+                    <option value="difference" id="diferencia">Diferencia</option>
+                    <option value="luminosity" id="diferencia">Luminosidad</option>
+                    <option value="multiply" id="multiplicar">Multiplicar</option>
                 </select>
             </div>
             <div>
@@ -75,13 +75,13 @@
                     <input type="range" min="0" max="1" value="0" step="0.05" class="slider" id="sepia"/>
                   </div>
                   <div class="rango">
+                    <label class="label-filtros">SATURACIÓN</label>
+                    <input type="range" min="0" max="2" value="1" step="0.05" class="slider" id="saturacion"/>
+                  </div>
+                  <div class="rango">
                     <label class="label-filtros">TONALIDAD</label>
                     <input type="range" min="1" max="360" value="1" step="1" class="slider" id="tonalidad"/>
                   </div>
-                  <div class="rango">
-                      <label class="label-filtros">SATURACIÓN</label>
-                      <input type="range" min="0" max="2" value="1" step="0.05" class="slider" id="saturacion"/>
-                    </div>
                     <div class="rango">
                       <label class="label-filtros">NEGATIVO</label>
                       <input type="range" min="0" max="1" value="0" step="0.05" class="slider" id="negativo"/>

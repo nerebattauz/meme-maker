@@ -8,7 +8,7 @@ let body = document.getElementsByTagName("body")
 
 
 
-// cambio de asides
+// CAMBIO ASIDES
 let asideImg = document.getElementById("aside-img")
 let asideTxt = document.getElementById("aside-txt")
 
@@ -29,19 +29,19 @@ navButtonImg.addEventListener("click", openAsideImg)
 navButtonTxt.addEventListener("click", openAsideTxt)
 
 
-// cambio color fondo texto
+// CAMBIO COLOR FONDO
 
 let colorPicker = document.getElementById("color-picker")
 let contImgMeme = document.getElementById("cont-img-meme")
 
-function cambiarFondoTexto(){
+function cambiarFondo(){
     contImgMeme.style.backgroundColor = colorPicker.value
 }
 
-colorPicker.addEventListener("input", cambiarFondoTexto)
+colorPicker.addEventListener("input", cambiarFondo)
 
 
-// CARGAR IMAGEN
+// CARGAR IMAGEN MEME
 
 let imgMeme = document.getElementById("cont-img-meme")
 let urlInput = document.getElementById("url-input")
@@ -52,7 +52,25 @@ function cargaImg(event){
 
 urlInput.addEventListener("input", cargaImg)
 
-//FILTROS NO FUNCA #####################################
+//MODOS DE FUSIÓN
+
+let selectorModoFusion = document.getElementById("pic-modo-fusion")
+let modoFusionNinguno = document.getElementById("ninguno")
+let modoFusionAclarar = document.getElementById("aclarar")
+let modoFusionOscurecer = document.getElementById("oscurecer")
+let modoFusionDiferencia = document.getElementById("diferencia")
+let modoFusionLuminosidad = document.getElementById("luminosidad")
+let modoFusionMultiplicar = document.getElementById("multiplicar")
+
+
+function cambioModoFusion(event){
+    let modoFusionSeleccionado = event.target.value
+    imgMeme.style.backgroundBlendMode = modoFusionSeleccionado
+    }
+
+selectorModoFusion.addEventListener("input", cambioModoFusion)
+
+//FILTROS
 
 let brillo = document.getElementById("brillo") 
 let opacidad = document.getElementById("opacidad")
@@ -94,18 +112,11 @@ function cambiarGrices(event){
 }
 grices.addEventListener("input", cambiarGrices)
 
-
 function cambiarSepia(event){
     let valorSepia = event.target.value
     imgMeme.style.filter = `sepia(${valorSepia})`
 }
 sepia.addEventListener("input", cambiarSepia)
-
-function cambiarTonalidad(event){
-    let valorTonalidad = event.target.value
-    imgMeme.style.filter = `hue-rotate(${valorTonalidad}deg)`
-}
-tonalidad.addEventListener("input", cambiarTonalidad)
 
 function cambiarSaturacion(event){
     let valorSaturacion = event.target.value
@@ -113,8 +124,36 @@ function cambiarSaturacion(event){
 }
 saturacion.addEventListener("input", cambiarSaturacion)
 
+function cambiarTonalidad(event){
+    let valorTonalidad = event.target.value
+    imgMeme.style.filter = `hue-rotate(${valorTonalidad}deg)`
+}
+tonalidad.addEventListener("input", cambiarTonalidad)
+
 function cambiarNegativo(event){
     let valorNegativo = event.target.value
     imgMeme.style.filter = `invert(${valorNegativo})`
 }
 negativo.addEventListener("input", cambiarNegativo)
+
+//REESTABLECER FILTROS
+
+let reestablecerButton = document.getElementById("reestablecer-filtros")
+
+function reestablecerFiltros(){
+    brillo.value = "1"
+    opacidad.value = "1"
+    contraste.value = "1"
+    desenfoque.value = "0"
+    grices.value = "0"
+    sepia.value = "0"
+    saturacion.value = "1"
+    tonalidad.value = "1"
+    negativo.value = "0"
+    imgMeme.style.filter = "none"
+    imgMeme.style.backgroundBlendMode = ""
+    imgMeme.style.backgroundColor = "#000000"
+    colorPicker.value = "#FFFFFF"
+}
+
+reestablecerButton.addEventListener("click", reestablecerFiltros)
