@@ -1,83 +1,166 @@
 
 
+// MODIFICAR CONTENIDO TEXTOS
 
 let topText = document.getElementById("input-top-text")
 let bottomText = document.getElementById("input-bottom-text")
 let txtSupMeme = document.getElementById("txt-sup")
 let txtInfMeme = document.getElementById("txt-inf")
-let checkTxtSup = document.getElementById("checkbox-txt-sup")
-let checkTxtInf = document.getElementById("checkbox-txt-inf")
-let fontSizeInput = document.getElementById("font-size")
 
-
-        //TEXTO 
-
-// Modificar texto
-function changeTopText(){
+function changeTopText() {
     txtSupMeme.textContent = topText.value
 }
-function changeBottomText(){
+function changeBottomText() {
     txtInfMeme.textContent = bottomText.value
 }
 
 topText.addEventListener("input", changeTopText)
 bottomText.addEventListener("input", changeBottomText)
 
-// Con o sin texto superior/inferior =====================================================================
+// BOTON CON O SIN TEXTO
+
+let checkTxtSup = document.getElementById("checkbox-txt-sup")
+let checkTxtInf = document.getElementById("checkbox-txt-inf")
 
 function supTxtVisiblility() {
-    txtSupMeme = txtSupMeme.style.textContent.hidden
+    if (checkTxtSup.checked) {
+        txtSupMeme.style.display = "none"
+    } else { txtSupMeme.style.display = "inline" }
 }
+checkTxtSup.addEventListener("click", supTxtVisiblility)
 
-checkTxtSup.addEventListener("change", supTxtVisiblility)
+function infTxtVisiblility() {
+    if (checkTxtInf.checked) {
+        txtInfMeme.style.display = "none"
+    } else { txtInfMeme.style.display = "inline" }
+}
+checkTxtInf.addEventListener("click", infTxtVisiblility)
 
-        //FUENTE
+//FONT SIZE
 
-//Cambiar tamaño txt
+let fontSizeInput = document.getElementById("font-size")
 
 function changeFontSizeTop() {
     txtSupMeme.style.fontSize = `${fontSizeInput.value}px`
     txtInfMeme.style.fontSize = `${fontSizeInput.value}px`
 }
+fontSizeInput.addEventListener("input", changeFontSizeTop)
 
-fontSizeInput.addEventListener("change", changeFontSizeTop)
+// TEXT ALIGN
 
-//Cambiar tipografía txt ===========================================================================
+let alinearIzquierda = document.getElementById("alinear-izquierda")
+let alinearCentro = document.getElementById("alinear-centro")
+let alinearDerecha = document.getElementById("alinear-derecha")
+
+function alinearTextoIzquierda(event) {
+    txtSupMeme.style.textAlign = "left"
+    txtInfMeme.style.textAlign = "left"
+}
+alinearIzquierda.addEventListener("click", alinearTextoIzquierda)
+
+function alinearTextoCentro(event) {
+    txtSupMeme.style.textAlign = "center"
+    txtInfMeme.style.textAlign = "center"
+}
+alinearCentro.addEventListener("click", alinearTextoCentro)
+
+function alinearTextoDerecha(event) {
+    txtSupMeme.style.textAlign = "right"
+    txtInfMeme.style.textAlign = "right"
+}
+alinearDerecha.addEventListener("click", alinearTextoDerecha)
 
 
-        //COLOR
-
-// Cambio color fondo
+// COLOR FONDO TEXTO
 
 let colorPickerFondo = document.getElementById("color-picker-fondo")
 let colorPickerColor = document.getElementById("color-picker-color")
-let textoSuperior = document.getElementById("txt-sup")
-let textoInferior = document.getElementById("txt-inf")
-        
-function cambiarFondoTexto(){
-    textoSuperior.style.backgroundColor = colorPickerFondo.value
-    textoInferior.style.backgroundColor = colorPickerFondo.value
+
+function cambiarFondoTexto() {
+    txtSupMeme.style.backgroundColor = colorPickerFondo.value
+    txtInfMeme.style.backgroundColor = colorPickerFondo.value
 }
-        
+
 colorPickerFondo.addEventListener("input", cambiarFondoTexto)
 
 // Cambio color texto
 
-function cambiarColorTexto(){
-    textoSuperior.style.color = colorPickerColor.value
-    textoInferior.style.color = colorPickerColor.value
+function cambiarColorTexto() {
+    txtSupMeme.style.color = colorPickerColor.value
+    txtInfMeme.style.color = colorPickerColor.value
 }
 
 colorPickerColor.addEventListener("input", cambiarColorTexto)
 
-// Fondo transparente
+// FONDO TRANSPARENTE
 
 let trasnparentCheck = document.getElementById("checkbox-transparent")
 
-function trasnparentTxt(){
-    if (trasnparentCheck.checked = true)
-    textoSuperior.style.backgroundColor = "none"
-}
+function trasnparentTxt() {
+    if (trasnparentCheck.checked) {
+        txtSupMeme.style.backgroundColor = "transparent";
+        txtInfMeme.style.backgroundColor = "transparent";
+    } else { txtSupMeme.style.backgroundColor = colorPickerFondo.value; txtInfMeme.style.backgroundColor = colorPickerFondo.value }
 
+}
 trasnparentCheck.addEventListener("click", trasnparentTxt)
 
+
+// CONTONO ####################################################
+
+/* let contornoNinguno = document.getElementById("contorno-ninguno")
+let contornoClaro = document.getElementById("contorno-claro")
+let contornoOscuro = document.getElementById("contorno-oscuro")
+
+function addContOscuro() {
+    txtSupMeme.style.stroke = "3px solid black";
+}
+
+contornoNinguno.addEventListener("click", sinControrno)
+contornoClaro.addEventListener("click", addContClaro)
+contornoOscuro.addEventListener("click", addContOscuro) */
+
+
+//ESPACIADO
+
+let espaciado = document.getElementById("espaciado")
+
+function cambiarEspaciado(event){
+    let numEspaciado = event.target.value
+    txtSupMeme.style.paddingTop = `${numEspaciado}px` 
+    txtSupMeme.style.paddingBottom = `${numEspaciado}px` 
+    txtInfMeme.style.paddingTop = `${numEspaciado}px` 
+    txtInfMeme.style.paddingBottom = `${numEspaciado}px` 
+}
+espaciado.addEventListener("input", cambiarEspaciado)
+
+//INTERLINEADO
+
+let interlineado = document.getElementById("interlineado")
+
+function cambiarInterlinea(event){
+    let valorInterlinea = event.target.value
+    txtSupMeme.style.lineHeight = valorInterlinea
+    txtInfMeme.style.lineHeight = valorInterlinea
+}
+interlineado.addEventListener("change", cambiarInterlinea)
+
+
+//FONT FAMILY ########################################################
+
+let contenedorMeme = document.getElementById("contenedor-txt-img")
+let fontType = document.getElementById("font-type")
+let arial = document.getElementById("arial")
+let arialBlack = document.getElementById("arial-black")
+let americanTypewriter = document.getElementById("american-typewriter")
+let comicSans = document.document.getElementById("comic-sans")
+let impact = document.getElementById("impact")
+let verdana = document.getElementById("verdana")
+let timesNewRoman = document.getElementById("times-new-roman")
+
+
+function cambiarFuente(event){
+    let fuenteSeleccionada = event.target.value;
+    contenedorMeme.style.fontFamily = "Comic Sans";
+}
+fontType.addEventListener("change", cambiarFuente)

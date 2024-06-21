@@ -111,19 +111,19 @@
             <div class="div-fuente">
               <label class="label-filtros" for="">FUENTE</label>
               <select class="txt-num-input" name="" id="font-type">
-                <option value="Arial">Arial</option>
-                <option value="Arial Black">Arial Black</option>
-                <option value="American Typewriter">American Typewriter</option>
-                <option value="Comic Sans">Comic Sans</option>
-                <option value="Impact">Impact</option>
-                <option value="Verdana">Verdana</option>
-                <option value="Times New Roman">Times New Roman</option>
+                <option id="arial" value="Arial">Arial</option>
+                <option id="arial-black" value="Arial Black">Arial Black</option>
+                <option id="american-typewriter" value="American Typewriter">American Typewriter</option>
+                <option id="comic-sans" value="Comic Sans">Comic Sans</option>
+                <option id="impact" value="Impact">Impact</option>
+                <option id="verdana" value="Verdana">Verdana</option>
+                <option id="times-new-roman" value="Times New Roman">Times New Roman</option>
               </select>
-              <input class="txt-num-input" id="font-size" type="number" value="24">
+              <input class="txt-num-input" id="font-size" type="number" min="14" max="72" value="24">
               <div>
-                <button class="button"><i class="fa-solid fa-align-left"></i></button>
-                <button class="button"><i class="fa-solid fa-align-center"></i></button>
-                <button class="button"><i class="fa-solid fa-align-right"></i></button>
+                <button class="button" id="alinear-izquierda"><i class="fa-solid fa-align-left"></i></button>
+                <button class="button" id="alinear-centro"><i class="fa-solid fa-align-center"></i></button>
+                <button class="button" id="alinear-derecha"><i class="fa-solid fa-align-right"></i></button>
               </div>
              </div> 
 
@@ -138,20 +138,20 @@
               <div id="div-contorno">
                 <label class="label-filtros" for="">CONTORNO</label>
                 <div id="botones-contorno">
-                <button class="button">Ninguno</button>
-                <button class="button">Claro</button>
-                <button class="button">Oscuro</button>
+                <button id="contorno-ninguno" class="button">Ninguno</button>
+                <button id="contorno-claro" class="button">Claro</button>
+                <button id="contorno-oscuro" class="button">Oscuro</button>
                 </div>
               </div>
 
               <div id="div-espaciado">
                 <label class="label-filtros" for="">ESPACIADO</label>
-                <input class="txt-num-input" type="number" name="" id="">
+                <input class="txt-num-input" type="number" min="1" max="60" value="16" name="" id="espaciado">
               </div>
 
               <div id="div-interlineado">
                 <label class="label-filtros" for="">INTERLINEADO</label>
-                <select class="txt-num-input" name="" id="interlineado">
+                <select class="txt-num-input" name="" id="interlineado" value="1.2">
                   <option value="0.8">0.8</option>
                   <option value="1">1</option>
                   <option value="1.2">1.2</option>
