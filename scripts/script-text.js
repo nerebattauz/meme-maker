@@ -70,7 +70,6 @@ function alinearTextoDerecha(event) {
 }
 alinearDerecha.addEventListener("click", alinearTextoDerecha)
 
-
 // COLOR FONDO TEXTO
 
 let colorPickerFondo = document.getElementById("color-picker-fondo")
@@ -105,22 +104,6 @@ function trasnparentTxt() {
 }
 trasnparentCheck.addEventListener("click", trasnparentTxt)
 
-
-// CONTONO ####################################################
-
-/* let contornoNinguno = document.getElementById("contorno-ninguno")
-let contornoClaro = document.getElementById("contorno-claro")
-let contornoOscuro = document.getElementById("contorno-oscuro")
-
-function addContOscuro() {
-    txtSupMeme.style.stroke = "3px solid black";
-}
-
-contornoNinguno.addEventListener("click", sinControrno)
-contornoClaro.addEventListener("click", addContClaro)
-contornoOscuro.addEventListener("click", addContOscuro) */
-
-
 //ESPACIADO
 
 let espaciado = document.getElementById("espaciado")
@@ -146,6 +129,14 @@ function cambiarInterlinea(event){
 interlineado.addEventListener("change", cambiarInterlinea)
 
 
+
+
+
+
+
+
+
+
 //FONT FAMILY ########################################################
 
 let contenedorMeme = document.getElementById("contenedor-txt-img")
@@ -161,6 +152,20 @@ let timesNewRoman = document.getElementById("times-new-roman")
 
 function cambiarFuente(event){
     let fuenteSeleccionada = event.target.value;
-    contenedorMeme.style.fontFamily = "Comic Sans";
+    contenedorMeme.style.fontFamily = fuenteSeleccionada
 }
 fontType.addEventListener("change", cambiarFuente)
+
+// CONTONO ####################################################
+
+/* let contornoNinguno = document.getElementById("contorno-ninguno")
+let contornoClaro = document.getElementById("contorno-claro")
+let contornoOscuro = document.getElementById("contorno-oscuro")
+
+function addContOscuro() {
+    txtSupMeme.style.stroke = "3px solid black";
+}
+
+contornoNinguno.addEventListener("click", sinControrno)
+contornoClaro.addEventListener("click", addContClaro)
+contornoOscuro.addEventListener("click", addContOscuro) */

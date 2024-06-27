@@ -34,7 +34,7 @@ navButtonTxt.addEventListener("click", openAsideTxt)
 let colorPicker = document.getElementById("color-picker")
 let contImgMeme = document.getElementById("cont-img-meme")
 
-function cambiarFondo(){
+function cambiarFondo() {
     contImgMeme.style.backgroundColor = colorPicker.value
 }
 
@@ -46,7 +46,7 @@ colorPicker.addEventListener("input", cambiarFondo)
 let imgMeme = document.getElementById("cont-img-meme")
 let urlInput = document.getElementById("url-input")
 
-function cargaImg(event){
+function cargaImg(event) {
     imgMeme.style.backgroundImage = `url(${urlInput.value})`
 }
 
@@ -63,16 +63,16 @@ let modoFusionLuminosidad = document.getElementById("luminosidad")
 let modoFusionMultiplicar = document.getElementById("multiplicar")
 
 
-function cambioModoFusion(event){
+function cambioModoFusion(event) {
     let modoFusionSeleccionado = event.target.value
     imgMeme.style.backgroundBlendMode = modoFusionSeleccionado
-    }
+}
 
 selectorModoFusion.addEventListener("input", cambioModoFusion)
 
 //FILTROS
 
-let brillo = document.getElementById("brillo") 
+let brillo = document.getElementById("brillo")
 let opacidad = document.getElementById("opacidad")
 let contraste = document.getElementById("contraste")
 let desenfoque = document.getElementById("desenfoque")
@@ -82,55 +82,55 @@ let tonalidad = document.getElementById("tonalidad")
 let saturacion = document.getElementById("saturacion")
 let negativo = document.getElementById("negativo")
 
-function cambiarBrillo(event){
+function cambiarBrillo(event) {
     let valorBrillo = event.target.value
     imgMeme.style.filter = `brightness(${valorBrillo})`
 }
 brillo.addEventListener("input", cambiarBrillo)
 
-function cambiarOpacidad(event){
+function cambiarOpacidad(event) {
     let valorOpacidad = event.target.value
     imgMeme.style.filter = `opacity(${valorOpacidad})`
 }
 opacidad.addEventListener("input", cambiarOpacidad)
 
-function cambiarContraste(event){
+function cambiarContraste(event) {
     let valorContraste = event.target.value
     imgMeme.style.filter = `contrast(${valorContraste})`
 }
 contraste.addEventListener("input", cambiarContraste)
 
-function cambiarDesenfoque (event) {
+function cambiarDesenfoque(event) {
     let valorDesenfoque = event.target.value
     imgMeme.style.filter = `blur(${valorDesenfoque}px)`
 }
 desenfoque.addEventListener("input", cambiarDesenfoque)
 
-function cambiarGrices(event){
+function cambiarGrices(event) {
     let valorGrices = event.target.value
     imgMeme.style.filter = `grayscale(${valorGrices})`
 }
 grices.addEventListener("input", cambiarGrices)
 
-function cambiarSepia(event){
+function cambiarSepia(event) {
     let valorSepia = event.target.value
     imgMeme.style.filter = `sepia(${valorSepia})`
 }
 sepia.addEventListener("input", cambiarSepia)
 
-function cambiarSaturacion(event){
+function cambiarSaturacion(event) {
     let valorSaturacion = event.target.value
     imgMeme.style.filter = `saturate(${valorSaturacion})`
 }
 saturacion.addEventListener("input", cambiarSaturacion)
 
-function cambiarTonalidad(event){
+function cambiarTonalidad(event) {
     let valorTonalidad = event.target.value
     imgMeme.style.filter = `hue-rotate(${valorTonalidad}deg)`
 }
 tonalidad.addEventListener("input", cambiarTonalidad)
 
-function cambiarNegativo(event){
+function cambiarNegativo(event) {
     let valorNegativo = event.target.value
     imgMeme.style.filter = `invert(${valorNegativo})`
 }
@@ -140,7 +140,7 @@ negativo.addEventListener("input", cambiarNegativo)
 
 let reestablecerButton = document.getElementById("reestablecer-filtros")
 
-function reestablecerFiltros(){
+function reestablecerFiltros() {
     brillo.value = "1"
     opacidad.value = "1"
     contraste.value = "1"
@@ -157,3 +157,17 @@ function reestablecerFiltros(){
 }
 
 reestablecerButton.addEventListener("click", reestablecerFiltros)
+
+
+//DESCARGAR IMAGEN
+
+let botonDescargarMeme = document.getElementById("descargar-meme")
+let contenedorMeme = document.getElementById("contenedor-txt-img")
+
+function descargarMeme() {
+    domtoimage.toBlob(contenedorMeme).then(function (blob) {
+        saveAs(blob, "mi-meme.png")
+    })
+}
+
+botonDescargarMeme.addEventListener("click", descargarMeme)
