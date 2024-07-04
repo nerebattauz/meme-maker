@@ -16,7 +16,7 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="body" class="">
 
     <!-- NAV -->
 
@@ -25,7 +25,7 @@
         <div id="nav-buttons">
             <button class="nav-button" id="nav-img"><i class="fa-solid fa-image"></i>Imagen</button>
             <button class="nav-button" id="nav-txt"><i class="fa-solid fa-font"></i>Texto</button>
-            <button class="nav-button" id="dark-mode"><i class="fa-solid fa-lightbulb"></i>Modo Claro</button>
+            <button class="nav-button" id="display-mode"><i class="fa-solid fa-lightbulb"></i>Modo Claro</button>
         </div>
     </nav>
 
@@ -33,9 +33,9 @@
 
     <main id="main">
         <div id="contenedor-txt-img">
-            <div id="txt-sup">TOP TEXT</div>
+            <p id="txt-sup">TOP TEXT</p>
             <div id="cont-img-meme"></div>
-            <div id="txt-inf">BOTTOM TEXT</div>
+            <p id="txt-inf">BOTTOM TEXT</p>
         </div>
         <button id="descargar-meme">Descargar Meme</button>
     </main>
@@ -45,9 +45,9 @@
     <aside class="aside" id="aside-img">
         <h3 class="name-section-aside">IMAGEN</h3>
         <div class="parametros-asides">
-            <div id="cont-url"><label for="">URL</label><input class="txt-num-input" id="url-input" type="url"></div>
+            <div id="cont-url"><label for="url-input">URL</label><input class="txt-num-input" id="url-input" type="url" name="url-input"></div>
             <div id="pic-dos-parametros">
-                <div id="pic-txt-bg"><label for="">FONDO</label><input class="color-picker" id="color-picker" type="color" value="#ffffff"></div>
+                <div id="pic-txt-bg"><label for="color-picker">FONDO</label><input class="color-picker" id="color-picker" type="color" value="#ffffff" name="color-picker"></div>
                 <select class="txt-num-input" id="pic-modo-fusion">
                     <option value="" id="ninguno">Ninguno</option>
                     <option value="lighten" id="aclarar">Aclarar</option>
@@ -61,40 +61,40 @@
                 <label>FILTROS</label>
                 <div class="conj-rangos">
                   <div class="rango">
-                    <label class="label-filtros">BRILLO</label>
-                    <input type="range" min="0" max="2" value="1" step="0.05" class="slider" id="brillo"/>
+                    <label class="label-filtros" for="brillo">BRILLO</label>
+                    <input type="range" min="0" max="2" value="1" step="0.05" class="slider" id="brillo" name="brillo"/>
                   </div>
                   <div class="rango">
-                    <label class="label-filtros">OPACIDAD</label>
-                    <input type="range" min="0" max="1" value="1" step="0.05" class="slider" id="opacidad"/>
+                    <label class="label-filtros" for="opacidad">OPACIDAD</label>
+                    <input type="range" min="0" max="1" value="1" step="0.05" class="slider" id="opacidad" name="opacidad"/>
                   </div>
                   <div class="rango">
-                    <label class="label-filtros">CONTRASTE</label>
-                    <input type="range" min="1" max="10" value="1" step="0.05" class="slider" id="contraste"/>
+                    <label class="label-filtros" for="contraste">CONTRASTE</label>
+                    <input type="range" min="1" max="10" value="1" step="0.05" class="slider" id="contraste" name="contraste"/>
                   </div>
                   <div class="rango">
-                    <label class="label-filtros">DESENFOQUE</label>
-                    <input type="range" min="0" max="5" value="0" step="0.05" class="slider" id="desenfoque"/>
+                    <label class="label-filtros" for="desenfoque">DESENFOQUE</label>
+                    <input type="range" min="0" max="5" value="0" step="0.05" class="slider" id="desenfoque" name="desenfoque"/>
                   </div>
                   <div class="rango">
-                    <label class="label-filtros">ESCALA DE GRISES</label>
-                    <input type="range" min="0" max="1" value="0" step="0.05" class="slider" id="grices"/>
+                    <label class="label-filtros" for="grices">ESCALA DE GRISES</label>
+                    <input type="range" min="0" max="1" value="0" step="0.05" class="slider" id="grices" name="grices"/>
                   </div>
                   <div class="rango">
-                    <label class="label-filtros">SEPIA</label>
-                    <input type="range" min="0" max="1" value="0" step="0.05" class="slider" id="sepia"/>
+                    <label class="label-filtros" for="sepia">SEPIA</label>
+                    <input type="range" min="0" max="1" value="0" step="0.05" class="slider" id="sepia" name="sepia"/>
                   </div>
                   <div class="rango">
-                    <label class="label-filtros">SATURACIÓN</label>
-                    <input type="range" min="0" max="2" value="1" step="0.05" class="slider" id="saturacion"/>
+                    <label class="label-filtros" for="saturacion">SATURACIÓN</label>
+                    <input type="range" min="0" max="2" value="1" step="0.05" class="slider" id="saturacion" name="saturacion"/>
                   </div>
                   <div class="rango">
-                    <label class="label-filtros">TONALIDAD</label>
-                    <input type="range" min="1" max="360" value="1" step="1" class="slider" id="tonalidad"/>
+                    <label class="label-filtros" for="tonalidad">TONALIDAD</label>
+                    <input type="range" min="1" max="360" value="1" step="1" class="slider" id="tonalidad" name="tonalidad"/>
                   </div>
                     <div class="rango">
-                      <label class="label-filtros">NEGATIVO</label>
-                      <input type="range" min="0" max="1" value="0" step="0.05" class="slider" id="negativo"/>
+                      <label class="label-filtros" for="negativo">NEGATIVO</label>
+                      <input type="range" min="0" max="1" value="0" step="0.05" class="slider" id="negativo" name="negativo"/>
                     </div>
                 </div>
                 <button id="reestablecer-filtros">Reestablecer filtros</button>
@@ -108,19 +108,19 @@
        
         <div class="parametros-asides">
             <div class="aside-input-text" id="cont-top-text">
-                <label class="label-filtros" for="">SUPERIOR</label>
-                <input class="txt-num-input" id="input-top-text" type="text">
+                <label class="label-filtros" for="input-top-text">SUPERIOR</label>
+                <input class="txt-num-input" id="input-top-text" type="text" name="input-top-text">
                 <div><input class="checkbox" id="checkbox-txt-sup" type="checkbox">Sin texto superior</div>
             </div>
             <div class="aside-input-text" id="cont-bottom-text">
-              <label class="label-filtros" for="">INFERIOR</label>
-              <input class="txt-num-input" id="input-bottom-text" type="text">
+              <label class="label-filtros" for="input-bottom-text">INFERIOR</label>
+              <input class="txt-num-input" id="input-bottom-text" type="text" name="input-bottom-text">
               <div><input class="checkbox" id="checkbox-txt-inf" type="checkbox">Sin texto inferior</div>
             </div>
             
             <div class="div-fuente">
-              <label class="label-filtros" for="">FUENTE</label>
-              <select class="txt-num-input" name="" id="font-type">
+              <label class="label-filtros" for="font-type">FUENTE</label>
+              <select class="txt-num-input" name="font-type" id="font-type">
                 <option id="arial" value="Arial">Arial</option>
                 <option id="arial-black" value="Arial Black">Arial Black</option>
                 <option id="american-typewriter" value="American Typewriter">American Typewriter</option>
@@ -139,14 +139,14 @@
 
               <div class="div-color">
                 <div class="cont-colorpicker">
-                  <div><label class="label-filtros" for="">COLOR</label><input class="color-picker" id="color-picker-color" type="color" value="#000000"></div>
-                  <div><label class="label-filtros" for="">FONDO</label><input class="color-picker" id="color-picker-fondo" type="color" value="#ffffff"></div>
+                  <div><label class="label-filtros" for="color-picker-color">COLOR</label><input class="color-picker" id="color-picker-color" type="color" value="#000000" name="color-picker-color"></div>
+                  <div><label class="label-filtros" for="color-picker-fondo">FONDO</label><input class="color-picker" id="color-picker-fondo" type="color" value="#ffffff" name="color-picker-fondo"></div>
                 </div>
                   <div><input id="checkbox-transparent" class="checkbox" type="checkbox">Fondo Transparente</div>
               </div>
               
               <div id="div-contorno">
-                <label class="label-filtros" for="">CONTORNO</label>
+                <label class="label-filtros" for="botones-contorno">CONTORNO</label>
                 <div id="botones-contorno">
                 <button id="contorno-ninguno" class="button">Ninguno</button>
                 <button id="contorno-claro" class="button">Claro</button>
@@ -155,13 +155,13 @@
               </div>
 
               <div id="div-espaciado">
-                <label class="label-filtros" for="">ESPACIADO</label>
-                <input class="txt-num-input" type="number" min="1" max="60" value="16" name="" id="espaciado">
+                <label class="label-filtros" for="espaciado">ESPACIADO</label>
+                <input class="txt-num-input" type="number" min="1" max="60" value="16" name="espaciado" id="espaciado">
               </div>
 
               <div id="div-interlineado">
-                <label class="label-filtros" for="">INTERLINEADO</label>
-                <select class="txt-num-input" name="" id="interlineado" value="1.2">
+                <label class="label-filtros" for="interlineado">INTERLINEADO</label>
+                <select class="txt-num-input" name="interlineado" id="interlineado" value="1.2">
                   <option value="0.8">0.8</option>
                   <option value="1">1</option>
                   <option value="1.2">1.2</option>

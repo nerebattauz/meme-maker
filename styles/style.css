@@ -1,6 +1,5 @@
 @import url(normalize.css);
 @import url(/styles/mobile.css);
-@import url(/styles/tablet.css) screen and (min-width: 767px) and (max-width: 1023px);
 @import url(/styles/desktop.css) screen and (min-width: 1024px);
 
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900');
@@ -23,8 +22,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: #f4f7ff;
-    font-family: 'Inter Tight';
 }
 
 a{

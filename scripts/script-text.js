@@ -128,44 +128,28 @@ function cambiarInterlinea(event){
 }
 interlineado.addEventListener("change", cambiarInterlinea)
 
-
-
-
-
-
-
-
-
-
-//FONT FAMILY ########################################################
+//FONT FAMILY 
 
 let contenedorMeme = document.getElementById("contenedor-txt-img")
 let fontType = document.getElementById("font-type")
-let arial = document.getElementById("arial")
-let arialBlack = document.getElementById("arial-black")
-let americanTypewriter = document.getElementById("american-typewriter")
-let comicSans = document.document.getElementById("comic-sans")
-let impact = document.getElementById("impact")
-let verdana = document.getElementById("verdana")
-let timesNewRoman = document.getElementById("times-new-roman")
-
 
 function cambiarFuente(event){
     let fuenteSeleccionada = event.target.value;
+    console.log(fuenteSeleccionada)
     contenedorMeme.style.fontFamily = fuenteSeleccionada
 }
-fontType.addEventListener("change", cambiarFuente)
+fontType.addEventListener("input", cambiarFuente)
 
 // CONTONO ####################################################
 
-/* let contornoNinguno = document.getElementById("contorno-ninguno")
+let contornoNinguno = document.getElementById("contorno-ninguno")
 let contornoClaro = document.getElementById("contorno-claro")
 let contornoOscuro = document.getElementById("contorno-oscuro")
 
 function addContOscuro() {
-    txtSupMeme.style.stroke = "3px solid black";
+    txtSupMeme.style.webkitTextStroke = "black 3px";
 }
 
 contornoNinguno.addEventListener("click", sinControrno)
 contornoClaro.addEventListener("click", addContClaro)
-contornoOscuro.addEventListener("click", addContOscuro) */
+contornoOscuro.addEventListener("click", addContOscuro)

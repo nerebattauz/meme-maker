@@ -1,12 +1,14 @@
 
+
 //cambio light-dark HAY QUE VERLO ===========================================================================
 
-let displayMode = document.getElementById("dark-mode")
-let nav = document.getElementsByTagName("nav")
-let body = document.getElementsByTagName("body")
+let displayButton = document.getElementById("display-mode")
+let body = document.getElementById("body")
 
-
-
+function cambiarDisplay() {
+    body.classlist.add = "light-mode"
+}
+displayButton.addEventListener("click", cambiarDisplay)
 
 // CAMBIO ASIDES
 let asideImg = document.getElementById("aside-img")
@@ -162,7 +164,6 @@ reestablecerButton.addEventListener("click", reestablecerFiltros)
 //DESCARGAR IMAGEN
 
 let botonDescargarMeme = document.getElementById("descargar-meme")
-let contenedorMeme = document.getElementById("contenedor-txt-img")
 
 function descargarMeme() {
     domtoimage.toBlob(contenedorMeme).then(function (blob) {
