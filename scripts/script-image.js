@@ -2,13 +2,17 @@
 
 //cambio light-dark HAY QUE VERLO ===========================================================================
 
-let displayButton = document.getElementById("display-mode")
+let displayButton = document.getElementById("display-button")
 let body = document.getElementById("body")
 
 function cambiarDisplay() {
     body.classlist.add = "light-mode"
 }
 displayButton.addEventListener("click", cambiarDisplay)
+
+
+
+
 
 // CAMBIO ASIDES
 let asideImg = document.getElementById("aside-img")
