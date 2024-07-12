@@ -6,9 +6,15 @@ let displayButton = document.getElementById("display-button")
 let body = document.getElementById("body")
 
 function cambiarDisplay() {
-    body.classlist.add = "light-mode"
+    body.classList.toggle("light-mode");
+    displayButton.style.display = "flex";
+    if(body.classList.contains("light-mode")){
+        displayButton.innerHTML = "<p><i class='fa-solid fa-lightbulb'></i><p>Modo Oscuro</p>"
+    } else {displayButton.innerHTML = "<p><i class='fa-solid fa-lightbulb'></i><p>Modo Claro</p>"}
 }
 displayButton.addEventListener("click", cambiarDisplay)
+
+//displayButton.innerHTML = "<p><i class='fa-solid fa-lightbulb'></i><p>Modo Claro</p>"
 
 
 

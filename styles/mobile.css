@@ -1,6 +1,4 @@
-.light-mode{
-        background-color: red;
-}
+
 
 
 body{
@@ -198,7 +196,6 @@ select{
     width: 100%;
     border: none;
     height: 32px;
-    background-color: var(--gray);
     padding: 0 8px;
 }
 
@@ -320,4 +317,38 @@ select{
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.light-mode{
+    background-color: var(--white);
+    color: var(--darker-gray);
+    nav{
+        background-color: var(--medium-purple);
+        color: var(--darker-gray);
+        button{
+            background-color: var(--medium-purple);
+            color: var(--darker-gray);
+        }
+        button:hover{
+            background-color: var(--light-purple);
+        }
+    }
+    aside {
+        background-color: var(--light-purple);
+        input{
+            background-color: var(--white);
+            color:var(--darker-gray);
+        }
+        select{
+            background-color: var(--white);
+            color:var(--darker-gray);
+        }
+        button{
+            background-color: var(--medium-purple);
+            color:var(--darker-gray);
+        }
+        button:hover{
+            background-color: var(--purple);
+        }
+    }
 }
