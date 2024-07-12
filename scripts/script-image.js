@@ -55,11 +55,12 @@ colorPicker.addEventListener("input", cambiarFondo)
 
 // CARGAR IMAGEN MEME
 
-let imgMeme = document.getElementById("cont-img-meme")
+
+let contTxtImg = document.getElementById("contenedor-txt-img")
 let urlInput = document.getElementById("url-input")
 
 function cargaImg(event) {
-    imgMeme.style.backgroundImage = `url(${urlInput.value})`
+    contTxtImg.style.backgroundImage = `url(${urlInput.value})`
 }
 
 urlInput.addEventListener("input", cargaImg)

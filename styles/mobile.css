@@ -86,6 +86,8 @@ select{
     background-color: black;
     padding: auto;
     color: black;
+    background-size: cover;
+    background-position: center;
 }
 
 #cont-img-meme{
