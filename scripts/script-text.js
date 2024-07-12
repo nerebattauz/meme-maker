@@ -4,7 +4,7 @@
 
 let topText = document.getElementById("input-top-text")
 let bottomText = document.getElementById("input-bottom-text")
-let txtSupMeme = document.getElementById("txt-sup")
+const txtSupMeme = document.getElementById("txt-sup")
 let txtInfMeme = document.getElementById("txt-inf")
 
 function changeTopText() {
@@ -108,12 +108,12 @@ trasnparentCheck.addEventListener("click", trasnparentTxt)
 
 let espaciado = document.getElementById("espaciado")
 
-function cambiarEspaciado(event){
+function cambiarEspaciado(event) {
     let numEspaciado = event.target.value
-    txtSupMeme.style.paddingTop = `${numEspaciado}px` 
-    txtSupMeme.style.paddingBottom = `${numEspaciado}px` 
-    txtInfMeme.style.paddingTop = `${numEspaciado}px` 
-    txtInfMeme.style.paddingBottom = `${numEspaciado}px` 
+    txtSupMeme.style.paddingTop = `${numEspaciado}px`
+    txtSupMeme.style.paddingBottom = `${numEspaciado}px`
+    txtInfMeme.style.paddingTop = `${numEspaciado}px`
+    txtInfMeme.style.paddingBottom = `${numEspaciado}px`
 }
 espaciado.addEventListener("input", cambiarEspaciado)
 
@@ -121,7 +121,7 @@ espaciado.addEventListener("input", cambiarEspaciado)
 
 let interlineado = document.getElementById("interlineado")
 
-function cambiarInterlinea(event){
+function cambiarInterlinea(event) {
     let valorInterlinea = event.target.value
     txtSupMeme.style.lineHeight = valorInterlinea
     txtInfMeme.style.lineHeight = valorInterlinea
@@ -133,23 +133,35 @@ interlineado.addEventListener("change", cambiarInterlinea)
 let contenedorMeme = document.getElementById("contenedor-txt-img")
 let fontType = document.getElementById("font-type")
 
-function cambiarFuente(event){
+function cambiarFuente(event) {
     let fuenteSeleccionada = event.target.value;
     console.log(fuenteSeleccionada)
     contenedorMeme.style.fontFamily = fuenteSeleccionada
 }
 fontType.addEventListener("input", cambiarFuente)
 
-// CONTONO ####################################################
+// CONTONO
 
 let contornoNinguno = document.getElementById("contorno-ninguno")
 let contornoClaro = document.getElementById("contorno-claro")
 let contornoOscuro = document.getElementById("contorno-oscuro")
 
-function addContOscuro() {
-    txtSupMeme.style.webkitTextStroke = "black 3px";
+function sinControrno() {
+    txtSupMeme.style.webkitTextStroke = "0px";
+    txtInfMeme.style.webkitTextStroke = "0px";
 }
-
 contornoNinguno.addEventListener("click", sinControrno)
+
+function addContClaro() {
+    txtSupMeme.style.webkitTextStroke = "2px white";
+    txtInfMeme.style.webkitTextStroke = "2px white";
+}
 contornoClaro.addEventListener("click", addContClaro)
+
+function addContOscuro() {
+    txtSupMeme.style.webkitTextStroke = "2px black";
+    txtInfMeme.style.webkitTextStroke = "2px black";
+}
 contornoOscuro.addEventListener("click", addContOscuro)
+
+
