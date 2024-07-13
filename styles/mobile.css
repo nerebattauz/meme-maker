@@ -74,7 +74,8 @@ select{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 60px;
+    padding: 60px 0;
+
 }
 
 #contenedor-txt-img{
@@ -83,6 +84,7 @@ select{
     justify-content: space-between;
     align-items: center;
     width: 480px;
+    height: 480px;
     background-color: black;
     padding: auto;
     color: black;
@@ -90,36 +92,39 @@ select{
     background-position: center;
 }
 
-#cont-img-meme{
-    height: 400px;
+.cont-img-meme{
     width: 100%;
-    background-size: cover;
-    background-position: center;
+    height: 100%;
+    background-color: rgb(9, 132, 240);
 }
 
 #txt-sup {
     display: inline;
-    width: 100%;
+    width: 480px;
     background-color: white;
     color: black;
     padding: 16px;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 700;
+    position: relative;
+    top: 0px;
+    z-index: 2;
 }
 
 #txt-inf {
-    width: 100%;
+    width: 480px;
     background-color: white;
     color: black;
     padding: 16px;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 700;
+    position: relative;
+    bottom: 0px;
 }
 
 #descargar-meme{
-    margin-top: 40px;
     background-color: var(--purple);
     color: white;
     border: none;
@@ -127,6 +132,7 @@ select{
     padding: 16px;
     font-size: large;
     cursor: pointer;
+    margin-top: 40px;
 }
 
 

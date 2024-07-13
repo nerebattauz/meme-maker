@@ -1,11 +1,27 @@
-let contTxtImg = document.getElementById("contenedor-txt-img")
-let urlInput = document.getElementById("url-input")
+//DOM
 
-//cambio light-dark HAY QUE VERLO ===========================================================================
-
+// NAV BUTTONS
+let navButtonImg = document.getElementById("nav-img")
+let navButtonTxt = document.getElementById("nav-txt")
 let displayButton = document.getElementById("display-button")
+//MAIN ELEMENTS
 let body = document.getElementById("body")
+let contTxtImg = document.getElementById("contenedor-txt-img")
+let contImgMeme = document.getElementById("cont-img-meme")
+let botonDescargarMeme = document.getElementById("descargar-meme")
+ //ASIDE ELEMENTS
+let urlInput = document.getElementById("url-input")
+let asideImg = document.getElementById("aside-img")
+let asideTxt = document.getElementById("aside-txt")
+let colorPicker = document.getElementById("color-picker")
+let selectorModoFusion = document.getElementById("pic-modo-fusion")
+let reestablecerButton = document.getElementById("reestablecer-filtros")
 
+
+//------------------------------------------------------------------------------------
+
+
+// MODO OSCURO / MODO CLARO
 function cambiarDisplay() {
     body.classList.toggle("light-mode");
     displayButton.style.display = "flex";
@@ -15,83 +31,40 @@ function cambiarDisplay() {
 }
 displayButton.addEventListener("click", cambiarDisplay)
 
-//displayButton.innerHTML = "<p><i class='fa-solid fa-lightbulb'></i><p>Modo Claro</p>"
-
-
-
-
-
 // CAMBIO ASIDES
-let asideImg = document.getElementById("aside-img")
-let asideTxt = document.getElementById("aside-txt")
-
-let navButtonImg = document.getElementById("nav-img")
-let navButtonTxt = document.getElementById("nav-txt")
-
 function openAsideImg() {
     asideImg.style.zIndex = 2
     asideTxt.style.zIndex = 1
 }
-
 function openAsideTxt() {
     asideImg.style.zIndex = 1
     asideTxt.style.zIndex = 2
 }
-
 navButtonImg.addEventListener("click", openAsideImg)
 navButtonTxt.addEventListener("click", openAsideTxt)
 
 
 // CAMBIO COLOR FONDO
-
-let colorPicker = document.getElementById("color-picker")
-let contImgMeme = document.getElementById("cont-img-meme")
-
 function cambiarFondo() {
     contTxtImg.style.backgroundColor = colorPicker.value
 }
-
 colorPicker.addEventListener("input", cambiarFondo)
 
 
 // CARGAR IMAGEN MEME
-
 function cargaImg(event) {
     contTxtImg.style.backgroundImage = `url(${urlInput.value})`
 }
-
 urlInput.addEventListener("input", cargaImg)
 
 //MODOS DE FUSIÓN
-
-let selectorModoFusion = document.getElementById("pic-modo-fusion")
-let modoFusionNinguno = document.getElementById("ninguno")
-let modoFusionAclarar = document.getElementById("aclarar")
-let modoFusionOscurecer = document.getElementById("oscurecer")
-let modoFusionDiferencia = document.getElementById("diferencia")
-let modoFusionLuminosidad = document.getElementById("luminosidad")
-let modoFusionMultiplicar = document.getElementById("multiplicar")
-
-
 function cambioModoFusion(event) {
     let modoFusionSeleccionado = event.target.value
     contTxtImg.style.backgroundBlendMode = modoFusionSeleccionado
 }
-
 selectorModoFusion.addEventListener("input", cambioModoFusion)
 
 //FILTROS
-
-let brillo = document.getElementById("brillo")
-let opacidad = document.getElementById("opacidad")
-let contraste = document.getElementById("contraste")
-let desenfoque = document.getElementById("desenfoque")
-let grices = document.getElementById("grices")
-let sepia = document.getElementById("sepia")
-let tonalidad = document.getElementById("tonalidad")
-let saturacion = document.getElementById("saturacion")
-let negativo = document.getElementById("negativo")
-
 function cambiarBrillo(event) {
     let valorBrillo = event.target.value
     contTxtImg.style.filter = `brightness(${valorBrillo})`
@@ -147,9 +120,6 @@ function cambiarNegativo(event) {
 negativo.addEventListener("input", cambiarNegativo)
 
 //REESTABLECER FILTROS
-
-let reestablecerButton = document.getElementById("reestablecer-filtros")
-
 function reestablecerFiltros() {
     brillo.value = "1"
     opacidad.value = "1"
@@ -165,18 +135,12 @@ function reestablecerFiltros() {
     contTxtImg.style.backgroundColor = "#000000"
     colorPicker.value = "#FFFFFF"
 }
-
 reestablecerButton.addEventListener("click", reestablecerFiltros)
 
-
 //DESCARGAR IMAGEN
-
-let botonDescargarMeme = document.getElementById("descargar-meme")
-
 function descargarMeme() {
     domtoimage.toBlob(contenedorMeme).then(function (blob) {
         saveAs(blob, "mi-meme.png")
     })
 }
-
 botonDescargarMeme.addEventListener("click", descargarMeme)

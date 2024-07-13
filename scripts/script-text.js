@@ -1,5 +1,4 @@
 
-
 // MODIFICAR CONTENIDO TEXTOS
 
 let topText = document.getElementById("input-top-text")
@@ -24,15 +23,15 @@ let checkTxtInf = document.getElementById("checkbox-txt-inf")
 
 function supTxtVisiblility() {
     if (checkTxtSup.checked) {
-        txtSupMeme.style.display = "none"
-    } else { txtSupMeme.style.display = "inline" }
+        txtSupMeme.style.visibility = "hidden"
+    } else { txtSupMeme.style.visibility = "visible" }
 }
 checkTxtSup.addEventListener("click", supTxtVisiblility)
 
 function infTxtVisiblility() {
     if (checkTxtInf.checked) {
-        txtInfMeme.style.display = "none"
-    } else { txtInfMeme.style.display = "inline" }
+        txtInfMeme.style.visibility = "hidden"
+    } else { txtInfMeme.style.visibility = "visible" }
 }
 checkTxtInf.addEventListener("click", infTxtVisiblility)
 
@@ -136,7 +135,8 @@ let fontType = document.getElementById("font-type")
 function cambiarFuente(event) {
     let fuenteSeleccionada = event.target.value;
     console.log(fuenteSeleccionada)
-    contenedorMeme.style.fontFamily = fuenteSeleccionada
+    txtSupMeme.style.fontFamily = fuenteSeleccionada
+    txtInfMeme.style.fontFamily = fuenteSeleccionada
 }
 fontType.addEventListener("input", cambiarFuente)
 
