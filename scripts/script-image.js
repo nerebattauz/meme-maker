@@ -1,4 +1,5 @@
-
+let contTxtImg = document.getElementById("contenedor-txt-img")
+let urlInput = document.getElementById("url-input")
 
 //cambio light-dark HAY QUE VERLO ===========================================================================
 
@@ -47,17 +48,13 @@ let colorPicker = document.getElementById("color-picker")
 let contImgMeme = document.getElementById("cont-img-meme")
 
 function cambiarFondo() {
-    contImgMeme.style.backgroundColor = colorPicker.value
+    contTxtImg.style.backgroundColor = colorPicker.value
 }
 
 colorPicker.addEventListener("input", cambiarFondo)
 
 
 // CARGAR IMAGEN MEME
-
-
-let contTxtImg = document.getElementById("contenedor-txt-img")
-let urlInput = document.getElementById("url-input")
 
 function cargaImg(event) {
     contTxtImg.style.backgroundImage = `url(${urlInput.value})`
@@ -78,7 +75,7 @@ let modoFusionMultiplicar = document.getElementById("multiplicar")
 
 function cambioModoFusion(event) {
     let modoFusionSeleccionado = event.target.value
-    imgMeme.style.backgroundBlendMode = modoFusionSeleccionado
+    contTxtImg.style.backgroundBlendMode = modoFusionSeleccionado
 }
 
 selectorModoFusion.addEventListener("input", cambioModoFusion)
@@ -97,55 +94,55 @@ let negativo = document.getElementById("negativo")
 
 function cambiarBrillo(event) {
     let valorBrillo = event.target.value
-    imgMeme.style.filter = `brightness(${valorBrillo})`
+    contTxtImg.style.filter = `brightness(${valorBrillo})`
 }
 brillo.addEventListener("input", cambiarBrillo)
 
 function cambiarOpacidad(event) {
     let valorOpacidad = event.target.value
-    imgMeme.style.filter = `opacity(${valorOpacidad})`
+    contTxtImg.style.filter = `opacity(${valorOpacidad})`
 }
 opacidad.addEventListener("input", cambiarOpacidad)
 
 function cambiarContraste(event) {
     let valorContraste = event.target.value
-    imgMeme.style.filter = `contrast(${valorContraste})`
+    contTxtImg.style.filter = `contrast(${valorContraste})`
 }
 contraste.addEventListener("input", cambiarContraste)
 
 function cambiarDesenfoque(event) {
     let valorDesenfoque = event.target.value
-    imgMeme.style.filter = `blur(${valorDesenfoque}px)`
+    contTxtImg.style.filter = `blur(${valorDesenfoque}px)`
 }
 desenfoque.addEventListener("input", cambiarDesenfoque)
 
 function cambiarGrices(event) {
     let valorGrices = event.target.value
-    imgMeme.style.filter = `grayscale(${valorGrices})`
+    contTxtImg.style.filter = `grayscale(${valorGrices})`
 }
 grices.addEventListener("input", cambiarGrices)
 
 function cambiarSepia(event) {
     let valorSepia = event.target.value
-    imgMeme.style.filter = `sepia(${valorSepia})`
+    contTxtImg.style.filter = `sepia(${valorSepia})`
 }
 sepia.addEventListener("input", cambiarSepia)
 
 function cambiarSaturacion(event) {
     let valorSaturacion = event.target.value
-    imgMeme.style.filter = `saturate(${valorSaturacion})`
+    contTxtImg.style.filter = `saturate(${valorSaturacion})`
 }
 saturacion.addEventListener("input", cambiarSaturacion)
 
 function cambiarTonalidad(event) {
     let valorTonalidad = event.target.value
-    imgMeme.style.filter = `hue-rotate(${valorTonalidad}deg)`
+    contTxtImg.style.filter = `hue-rotate(${valorTonalidad}deg)`
 }
 tonalidad.addEventListener("input", cambiarTonalidad)
 
 function cambiarNegativo(event) {
     let valorNegativo = event.target.value
-    imgMeme.style.filter = `invert(${valorNegativo})`
+    contTxtImg.style.filter = `invert(${valorNegativo})`
 }
 negativo.addEventListener("input", cambiarNegativo)
 
@@ -163,9 +160,9 @@ function reestablecerFiltros() {
     saturacion.value = "1"
     tonalidad.value = "1"
     negativo.value = "0"
-    imgMeme.style.filter = "none"
-    imgMeme.style.backgroundBlendMode = ""
-    imgMeme.style.backgroundColor = "#000000"
+    contTxtImg.style.filter = "none"
+    contTxtImg.style.backgroundBlendMode = ""
+    contTxtImg.style.backgroundColor = "#000000"
     colorPicker.value = "#FFFFFF"
 }
 
